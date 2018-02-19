@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\SuratMasuk as Obj;
+use App\Disposisi;
+
 class DisposisiController extends Controller
 {
     /**
@@ -19,9 +21,27 @@ class DisposisiController extends Controller
 
         return view($this->page.'/create',compact('data'));
     }
+
+    public function simpanDisposisi(Request $request){
+        $disposisi = new Disposisi;
+        $disposisi->no_disposisi = $request->no_disposisi;
+        $disposisi->no_agenda = $request->no_agenda;
+        $disposisi->no_surat = $request->no_surat;
+        $disposisi->kepada = $request->kepada;
+        $disposisi->keterangan = $request->keterangan;
+        $disposisi->status = $request->status;
+
+        $disposisi->tanggapan = $request->tanggapan;
+        $disposisi->save();
+
+        return redirect('/disposisi');
+    }
     public function index()
     {
         //
+        $data = Disposisi::all();
+
+        return view($this->page.'/index',compact('data'));
     }
 
     /**

@@ -7,36 +7,38 @@
 	<div class="col-lg-6">
 		<h1>Disposisi Surat</h1>
 		
-	<form action="" method="post">
+	<form action="{{ url('/disposisi/'.$data['no_agenda']) }}" method="post">
+	{{csrf_field()}}
+
 		<div class="form-group">
 		<label>Nomor Disposisi</label>
-		<input type="text" name="" class="form-control">
+		<input type="text" name="no_disposisi" class="form-control">
 		</div>
 		<div class="form-group">
 		<label>Nomor Agenda</label>
-		<input type="text" name="" class="form-control">
+		<input type="text" name="no_agenda" class="form-control">
 		</div>
 		<div class="form-group">
 		<label>No Surat</label>
-		<input type="text" name="" class="form-control" readonly value="{{$data['no_surat']}}">
+		<input type="text" name="no_surat" class="form-control" readonly value="{{$data['no_surat']}}">
 		</div>
 		<div class="form-group">
 		<label>Kepada</label>
-		<input type="text" name="" class="form-control">
+		<input type="text" name="kepada" class="form-control">
 		</div>
 		<div class="form-group">
 		<label>Keterangan</label>
-	<textarea class="form-control"></textarea>
+	<textarea class="form-control" name="keterangan"></textarea>
 			
 		</div>
 		<div class="form-group">
 		<label>Status</label>
-		<input type="text" name="" class="form-control">
+		<input type="text" name="status" class="form-control">
 			
 		</div>
 		<div class="form-group">
 		<label>Tanggapan</label>
-	<textarea class="form-control"></textarea>
+	<textarea class="form-control" name="tanggapan"></textarea>
 			
 		</div>
 <button type="submit" class="btn btn-primary">Simpan</button>

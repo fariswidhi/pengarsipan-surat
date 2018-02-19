@@ -30,7 +30,7 @@
 			</tbody>
 		</table>
 
-<button class="btn btn-danger">Disposisikan Surat</button>
+<a href="{{ url('surat-masuk/'.$data['no_agenda'].'/disposisi' ) }}" class="btn btn-danger">Disposisikan Surat</a>
 	</div>
 </div>
 @endsection

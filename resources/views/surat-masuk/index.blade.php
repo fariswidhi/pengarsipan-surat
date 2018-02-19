@@ -9,13 +9,13 @@
 	<table class="table table-hover">
 	<thead>
 		<th>#</th>
-		<th>No Agenda</th>
 		<th>Jenis Surat</th>
 		<th>Tanggal Kirim</th>
 		<th>Tanggal Terima</th>
 		<th>Nomor Surat</th>
 		<th>Pengirim</th>
 		<th>Perihal</th>
+		<th>Aksi</th>
 	</thead>
 
 	<tbody>
@@ -29,6 +29,7 @@
 			<td>{{$d->pengirim}}</td>
 			<td>{{$d->perihal}}</td>
 			<td>
+			<a href="{{url($page.'/'.$d->no_agenda.'')}}" class="btn btn-primary">Detail</a>
 			<a href="{{url($page.'/'.$d->no_agenda.'/edit')}}" class="btn btn-success">Edit</a>
 
 			<form action="{{url($page.'/'.$d->no_agenda)}}" method="post" style="display: inline;">
