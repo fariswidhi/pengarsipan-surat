@@ -66,6 +66,10 @@ class SuratMasukController extends Controller
     public function show($id)
     {
         //
+        $data= Obj::find($id);
+        $title = "Detail Surat Masuk";
+
+        return view($this->page.'/show',compact('data','title'));
     }
 
     /**

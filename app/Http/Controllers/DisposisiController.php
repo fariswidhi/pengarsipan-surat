@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\SuratMasuk as Obj;
 class DisposisiController extends Controller
 {
     /**
@@ -11,6 +11,14 @@ class DisposisiController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    protected $page = 'disposisi';
+
+    public function disposisi($id){
+        $data= Obj::find($id);
+
+        return view($this->page.'/create',compact('data'));
+    }
     public function index()
     {
         //
