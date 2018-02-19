@@ -9,21 +9,22 @@
 	<table class="table table-hover">
 	<thead>
 		<th>#</th>
-		<th>Nama</th>
-		<th>Email</th>
+		<th>No Agenda</th>
+		<th>Kepada</th>
 		<th>Aksi</th>
 	</thead>
 
 	<tbody>
 		@foreach ($data as $d)
 		<tr>
-			<td>{{$d->id}}</td>
-			<td>{{$d->name}}</td>
-			<td>{{$d->email}}</td>
+			<td>{{$d->no_disposisi}}</td>
+			<td>{{$d->no_agenda}}</td>
+			<td>{{$d->kepada}}</td>
 			<td>
-			<a href="{{url('petugas/'.$d->id.'/edit')}}" class="btn btn-success">Edit</a>
+			<a href="{{url('disposisi/'.$d->no_agenda)}}" class="btn btn-primary">Detail</a>
+			<a href="{{url('disposisi/'.$d->no_agenda.'/edit')}}" class="btn btn-success">Edit</a>
 
-			<form action="{{url('petugas/'.$d->id)}}" method="post" style="display: inline;">
+			<form action="{{url('disposisi/'.$d->id)}}" method="post" style="display: inline;">
 			{{method_field('DELETE')}}	
 			{{csrf_field()}}
 			<button type="submit" class="btn btn-danger">Hapus</button>

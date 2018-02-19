@@ -74,6 +74,9 @@ class DisposisiController extends Controller
     public function show($id)
     {
         //
+        $data = Disposisi::where('no_agenda',$id)->first();
+
+        return view($this->page.'/detail',compact('data'));
     }
 
     /**
